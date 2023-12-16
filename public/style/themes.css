@@ -1,0 +1,139 @@
+@import url(variables.css);
+/*
+Theme:
+	Default:
+		- 0d012e -- Russian Violet (Primary Background)
+		- eff8e2 -- Floral White (Primary Text)
+		- ff1fbc -- Electric Pink (Links)
+		- 52b2cf -- Light Blue (Primary Buttons)
+		- 615756 -- Dark Grayish Brown (Secondary Buttons)
+		- fcb0b3 -- Melon (Panels)
+*/
+:root {
+  /* Light Themes */
+  --lt-color: #615756;
+  --lt-background: #eff8e2;
+
+  /* Dark Themes */
+  --dk-color: #0d012e;
+  --dk-background: #52b2cf;
+
+  /* Pop Shadow */
+  --pop-shadow: 6px 8px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Classes - Color */
+
+.light {
+  background-color: var(--lt-background);
+  color: var(--lt-color);
+}
+
+.dark {
+  background-color: var(--dk-background);
+  color: var(--dk-color);
+}
+
+/* Classes - Base */
+
+.flat {
+  border: none;
+}
+
+.pop {
+  box-shadow: var(--pop-shadow);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+/* Classes - Space - A */
+
+.spaced-1 {
+  padding: 0.5rem;
+}
+
+.spaced-2 {
+  padding: 1rem;
+}
+
+.spaced-3 {
+  padding: 3rem;
+}
+
+.spaced-4 {
+  padding: 5rem;
+}
+
+.spaced-5 {
+  padding: 10rem;
+}
+
+/* Classes - Space - V */
+
+.spaced-v-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.spaced-v-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.spaced-v-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.spaced-v-4 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.spaced-v-5 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+/* Classes - Space - H */
+
+.spaced-h-1 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.spaced-h-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.spaced-h-3 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.spaced-h-4 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.spaced-h-5 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/* Classes - Size */
+
+.w-sm {
+  width: 33%;
+}
+
+.w-md {
+  width: 66%;
+}
+
+.w-lg {
+  width: 90%;
+}

@@ -1,0 +1,58 @@
+@import url(variables.css);
+
+nav {
+  padding: 30px;
+}
+
+button {
+  align-items: center; /* Align icon and text vertically */
+  background-color: var(--primary-button-color);
+  /* background-color: black; */
+  border-radius: 8px;
+  border: none;
+  color: var(--primary-button-text-color);
+  cursor: pointer;
+  display: inline-flex; /* Make the button and icon inline */
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+button.margin-top-lg {
+  margin-top: 5rem;
+}
+
+button.margin-top-md {
+  margin-top: 3rem;
+}
+
+button.margin-top-sm {
+  margin-top: 1rem;
+}
+
+button.center {
+	margin: auto;
+}
+
+button.icon {
+  margin-right: 0.5rem;
+}
+
+button:disabled {
+  background-color: var(--primary-button-color-disabled);
+  color: var(--primary-button-text-color-disabled);
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: var(--primary-button-color-hover);
+  color: var(--primary-button-text-color-hover);
+  transition-duration: 0.25s;
+}
+
+
+
+
+
+

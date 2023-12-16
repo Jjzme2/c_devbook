@@ -1,0 +1,104 @@
+@import url(variables.css);
+@import url(animations.css);
+
+
+/* Card from dashboard */
+.goal-card {
+	background-color: var(--primary-panel-color);
+	border-radius: 8px;
+	box-shadow: -3px -3px 5px black;
+	padding: 0.5rem 1.25rem;
+	min-height: 100px;
+	min-width: 150px;
+	width: fit-content;
+	width: -moz-fit-content;
+	font-size: 16px;
+}
+
+.goal-card:hover {
+	animation: hover 2.5s ease-out infinite;
+}
+
+.goal-header {
+	padding: 0.5rem 1.25rem;
+}
+
+.goal-header h1 {
+	color: var(--primary-text-color);
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.goal-header sub {
+	font-style: italic;
+	font-weight: 400;
+	font-size: .85rem;
+}
+
+.goal-header p {
+	color: var(--primary-text-color);
+	font-size: 1rem;
+}
+
+/* Goal Form Page */
+
+.goal-form-main {
+	background-color: transparent;
+	border-radius: 15px;
+	box-shadow: 3px 3px 6px black inset;
+	padding: 1.25rem 3rem;
+	margin: 1rem auto;
+}
+
+.goal-form-main p {
+	color: var(--primary-text-color);
+	font-size: 1rem;
+}
+
+.goal-form-dates {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.goal-form-section {
+	padding: 0.5rem 1.25rem;
+	background-color: var(--primary-panel-color);
+}
+
+.goal-form-section h1 {
+	color: var(--primary-text-color);
+	font-size: 1.25rem;
+	font-weight: bold;
+
+}
+
+.goal-form-list {
+	border-radius: 10px;
+	background-color: var(--primary-panel-color);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+	margin: 1rem auto;
+	padding: 1rem;
+	width: 50%;
+}
+
+.goal-form-card {
+	background-color: var(--primary-panel-color);
+	border-radius: 10px;
+	padding: 2rem;
+}
+
+.goal-display {
+	background-color: var(--primary-panel-color);
+	border-radius: 10px;
+	box-shadow: -3px -3px 5px black;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+	margin: 5rem auto 1rem;
+	padding: 3rem 5rem;
+	width: 90%;
+
+}

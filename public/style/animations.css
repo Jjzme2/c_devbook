@@ -1,0 +1,19 @@
+@import url(variables.css);
+
+@keyframes hover {
+  0% {
+    /* transform: scale(1); */
+    background-color: var(--hover-start-color);
+    color: var(--hover-start-text);
+  }
+  50% {
+    /* transform: scale(1.025); */
+    background-color: var(--hover-end-color);
+    color: var(--hover-end-text);
+  }
+  100% {
+    /* transform: scale(1); */
+    background-color: var(--hover-start-color);
+	color: var(--hover-start-text);
+	}
+}

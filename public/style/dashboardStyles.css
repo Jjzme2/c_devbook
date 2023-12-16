@@ -1,0 +1,65 @@
+@import url(variables.css);
+
+.dashboard-page {
+	background-color: var(--primary-background-color);
+	color: var(--primary-text-color);
+	min-height: 100vh;
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+.dashboard-greeting {
+	background-color: var(--primary-panel-color);
+	border-radius: 8px;
+	box-shadow: inset -3px -3px 5px silver;
+	margin: 5rem auto;
+	padding: 0.5rem 1.25rem;
+	width: auto;
+	max-width: 800px;
+}
+
+.dashboard-sub-greeting {
+	min-width: 600px;
+}
+
+.dashboard-greeting h1 {
+	color: var(--primary-text-color);
+	font-size: 1.25rem;
+	margin-bottom: 2rem;
+}
+
+.dashboard-main {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+	margin: 0 auto;
+}
+
+.dashboard-card {
+	background-color: var(--primary-panel-color);
+	border-radius: 8px;
+	box-shadow: -3px -3px 5px black;
+	padding: 0.5rem 1.25rem;
+	min-height: 200px;
+	min-width: 150px;
+	font-size: 16px;
+}
+
+.dashboard-navigation {
+  background-color: var(--primary-panel-color);
+  border-radius: 8px;
+  box-shadow: inset -3px -3px 5px silver;
+  position: absolute;
+  left: 5%;
+  top: 25%;
+  width: 30%;
+  max-width: 300px;
+  padding: 0.5rem;
+  margin-right: 2%; /* Reduced: Decreased margin for a slight margin */
+}
+
+/* Add this if you want it to consider other objects */
+.dashboard-navigation + * {
+	margin-left: calc(15% + 150px);
+	margin-right: calc(15% + 50px);
+}

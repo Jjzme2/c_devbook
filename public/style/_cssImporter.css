@@ -1,0 +1,15 @@
+@import url("./commonElements.css");
+/* @import url("./commonClasses.css"); */
+
+@import url("./dashboardStyles.css");
+
+@import url("./themes.css");
+@import url("./pageStyles.css");
+
+@import url("./animations.css");
+
+@import url("./outdated.css");
+
+/* Pages */
+
+@import url("./goalPage.css");
