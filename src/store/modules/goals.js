@@ -11,7 +11,7 @@ const goals = {
     getAll: (state) => state.allItems,
     getById: (state) => (id) => {
       if (state.allItems.find((item) => item.id === id) === undefined) {
-        if (state.emptyObject === {}) {
+        if (state.emptyObject == {}) {
           throw new Error(
             "No goal with this id, and `Empty Goal` has not been initialized."
           );

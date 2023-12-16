@@ -6,6 +6,8 @@ import quotes from "./modules/quotes";
 import goals from "./modules/goals";
 import reminders from "./modules/reminders";
 import suggestions from "./modules/suggestions";
+import statuses from "./modules/statuses";
+import motivations from "./modules/motivations";
 
 const store = createStore({
   state: {},
@@ -18,6 +20,8 @@ const store = createStore({
     goals,
     reminders,
     suggestions,
+    statuses,
+    motivations,
   },
 });
 

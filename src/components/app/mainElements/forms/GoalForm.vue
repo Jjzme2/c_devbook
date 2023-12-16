@@ -1,7 +1,8 @@
 <template>
   <BaseView :includeHeader="false">
     <div class="goal-form-main" v-if="goal.id">
-      <div class="input-area" v-if="this.$route.params.goalId == 0">
+      <!-- If we are editing allow the name input. -->
+      <div class="input-area" v-if="isEditing">
         <!-- <label for="goalName">Goal:</label> -->
         <input
           id="goalName"
@@ -10,35 +11,32 @@
           v-model="goal.name"
         />
       </div>
+
+      <!-- Include an editTextOnClick component for the description, that is conditionally restricted. -->
       <editTextOnClick
         id="goalDescription"
         :text="goal.description"
         @text-updated="goal.description = $event"
+        :restrictEdit="!isEditing"
       ></editTextOnClick>
 
       <!-- Dropdown for status options -->
-      <div class="input-area">
-        <label for="goalStatus">Status:</label>
-        <select id="goalStatus" v-model="goal.status">
-          <option value="0">Not Started</option>
-          <option value="1">In Progress</option>
-          <option value="2">Completed</option>
-        </select>
-      </div>
+      <commonDataDropdown
+        apiName="statuses"
+        @changed="goal.statusId = $event"
+        :defaultValue="goal.statusId"
+        :editable="isEditing"
+      ></commonDataDropdown>
 
       <!-- Dropdown for Motivation options -->
+      <commonDataDropdown
+        apiName="motivations"
+        @changed="goal.motivationId = $event"
+        :defaultValue="goal.motivationId"
+        :editable="isEditing"
+      ></commonDataDropdown>
 
-      <div class="input-area">
-        <label for="goalMotivation">Motivation:</label>
-        <select id="goalMotivation" v-model="goal.motivation">
-          <option value="0">Not Motivated</option>
-          <option value="1">Motivated</option>
-          <option value="2">Very Motivated</option>
-        </select>
-      </div>
-
-      <!-- Separate the primary info from the secondary info cleanly. CSS stuff. -->
-
+      <!--- Goal Date horizontal row -->
       <div class="goal-form-dates">
         <p>
           Created:
@@ -51,6 +49,7 @@
         </p>
       </div>
 
+      <!-- Notes -->
       <div class="goal-form-section">
         <h1>Notes:</h1>
         <button class="send-button" @click="addNote">📝</button>
@@ -83,6 +82,7 @@
         </div>
       </div>
 
+      <!-- Tasks -->
       <div class="goal-form-section">
         <h1>Tasks:</h1>
         <button class="send-button" @click="addTask">📝</button>
@@ -107,6 +107,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Action Buttons -->
       <button @click="save" class="send-button">Save</button>
     </div>
 
@@ -121,12 +123,16 @@ import BaseView from "@/views/main/BaseView.vue";
 import unfoldForm from "@/components/app/common/unfolds/UnfoldForm.vue";
 import editTextOnClick from "@/components/app/common/text/editableOnClick.vue";
 
+// Dropdowns
+import commonDataDropdown from "@/components/app/mainElements/dataDropdowns/commonDataDropdown.vue";
+
 export default {
   name: "GoalForm",
   components: {
     BaseView,
     unfoldForm,
     editTextOnClick,
+    commonDataDropdown,
   },
 
   beforeMount() {
@@ -139,6 +145,9 @@ export default {
     },
     goal() {
       return this.$store.getters["goals/getById"](this.goalId);
+    },
+    isEditing() {
+      return this.$route.params.goalId == 0;
     },
   },
   methods: {
